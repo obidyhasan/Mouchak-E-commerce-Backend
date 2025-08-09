@@ -9,6 +9,7 @@ import { handleCastError } from "../errors/handleCastError";
 import { handleValidationError } from "../errors/handleValidationError";
 import { handleZodError } from "../errors/handleZodError";
 import AppError from "../errors/AppError";
+import { deleteImageFromCloudinary } from "../config/cloudinary.config";
 
 export const globalErrorHandler = async (
   err: any,
@@ -20,16 +21,16 @@ export const globalErrorHandler = async (
     console.log(err);
   }
 
-  //   if (req.file) {
-  //     await deleteImageFromCloudinary(req.file.path);
-  //   }
+  if (req.file) {
+    await deleteImageFromCloudinary(req.file.path);
+  }
 
-  //   if (req.files && Array.isArray(req.files) && req.files.length) {
-  //     const imageUrl = (req.files as Express.Multer.File[]).map(
-  //       (file) => file.path
-  //     );
-  //     await Promise.all(imageUrl.map((url) => deleteImageFromCloudinary(url)));
-  //   }
+  if (req.files && Array.isArray(req.files) && req.files.length) {
+    const imageUrl = (req.files as Express.Multer.File[]).map(
+      (file) => file.path
+    );
+    await Promise.all(imageUrl.map((url) => deleteImageFromCloudinary(url)));
+  }
 
   let errorSources: TErrorSources[] = [];
   let statusCode = 500;
