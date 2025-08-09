@@ -20,7 +20,12 @@
   },
   "homepage": "https://github.com/obidyhasan/Mouchak-E-commerce-Backend#readme",
   "dependencies": {
+    "@types/passport": "^1.0.17",
+    "@types/passport-google-oauth20": "^2.0.16",
+    "@types/passport-local": "^1.0.38",
+    "@types/pdfkit": "^0.17.2",
     "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.7.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
@@ -31,6 +36,11 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.17.1",
     "nodemailer": "^7.0.5",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "pdfkit": "^0.17.1",
+    "redis": "^5.8.0",
     "zod": "^4.0.16"
   },
   "devDependencies": {
